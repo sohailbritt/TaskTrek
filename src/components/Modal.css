@@ -1,0 +1,64 @@
+.popUp {
+    width: 350px;
+    height: 250px;
+    z-index: 999999 !important;
+    position: absolute;
+    top:25%;
+    left:35%;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #5363a7, #63b0a2);
+    opacity:0.93;
+}
+h5{
+    padding-left: 10px;
+}
+.close{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.input {
+    width: 200px;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    border-radius: 2.5px;
+    border-bottom: 2px solid rgb(244, 243, 243);
+    background: transparent;
+    margin-left: 52px;
+    margin-top: 12px;
+    }
+    .input:focus {
+        border-bottom: 2px solid white;
+    }
+.close:hover{
+    cursor: pointer;
+}
+.button-container {
+    display: flex;
+margin-top: 66px;
+justify-content: space-around;
+
+}
+.btn {
+    width: 75px;
+    color: white;
+    background-color: #3ac697;
+    border: none;
+    border-radius: 2.5px;
+    padding: 10px;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: #33ab83;
+}
+.cancel {
+    background-color: #a62626 !important;
+}

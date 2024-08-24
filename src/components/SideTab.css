@@ -1,0 +1,35 @@
+.sidetab {
+    width: 73px;
+    background: url(../assets/bg.png);
+     background: linear-gradient(
+      rgba(0, 0, 0, 0.092),
+      rgba(0, 0, 0, 0.095)
+    );
+    background-position: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+ .item{
+    margin-top: 26px;
+    font-size: 18px;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
+ }
+ .item:hover{
+    cursor: pointer;
+ }
+ .item-highlight {
+   border-right-style: inset;
+   background: linear-gradient(
+      rgba(0, 0, 0, 0.092),
+      rgba(0, 0, 0, 0.095)
+    );
+ }

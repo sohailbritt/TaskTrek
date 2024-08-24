@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+
+import React from 'react';
+import SideTab from './components/SideTab';
+import ListingTab from './components/ListingTab';
+import ContextProvider from './context/ContextProvider';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <div>
+        <header>
+          <span>Tasktrek</span>
+        </header>
+        <div className='container'>
+          <SideTab/>
+          <ListingTab/>
+        </div>
+      </div>
+    </ContextProvider>
+
   );
 }
 
