@@ -9,7 +9,11 @@ const InputField = ({getInputData}) => {
     }
   return (
     <>
-    <input type='text' className='input' onBlur ={(e)=>updateInputData(e)}/>
+    <input
+    type='text'
+    className='input'
+    placeholder='Add Task'
+    onBlur ={(e)=>updateInputData(e)}/>
     </>
   )
 }

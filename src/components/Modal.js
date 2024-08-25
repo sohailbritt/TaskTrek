@@ -31,7 +31,7 @@ const Modal = (props) => {
           <hr/>
           <input
             type='text'
-            className='input'
+            className='input-modal'
             ref={updateInput}
             defaultValue={item.task}
           />
