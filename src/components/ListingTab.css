@@ -31,12 +31,31 @@
 .items{
     cursor: pointer;
 }
-.form-wrapper {
+.form-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 550px;
-    margin-top: 35px;
+    margin-top: 75px;
+}
+.listing {
+    margin-top: 80px;
+    position: relative;
+    right: 20px;
+}
+.dashboard {
+    margin-top: 30px;
+}
+.search-button {
+    position: relative;
+    right:36px;
+}
+.form-wrapper-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    margin-top: 75px;
 }
 .tasklist {
     display: flex;
@@ -44,14 +63,69 @@
     justify-content: center;
     align-items: left;
     width: 550px;
-    margin-left: 163px;
+    margin-left: 138px;
     margin-top: 38px;
 }
 ul {
     display: block;
+    height: 100%;
     list-style-type: none;
+    margin-left: 11px;
+    overflow-y: auto;
 
   }
 ul li {
-    padding-top: 10px
+    padding-top: 10px;
+    width: 250px;
 }
+.status {
+    position: relative;
+    margin-left: 15px;
+    top: 3px;
+}
+.input {
+    width: 200px;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    border-radius: 2.5px;
+    border-bottom: 2px solid rgb(244, 243, 243);
+    background: transparent;
+    }
+    .input:focus {
+        border-bottom: 2px solid white;
+    }
+.search {
+    margin-right: 20px;
+    position: relative;
+    right: 36px;
+    top: 3px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 3px;
+}
+.completed-task{
+    margin-top: 156px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #64c5bb;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64c5bb;
+  }

@@ -11,21 +11,27 @@ const newTaskData = {
     task: addData,
     isCompleted: false
 }
+console.log(newTaskData);
 
 const addTask = () => {
   let duplicate = false;
-  task.forEach(item => {
-    duplicate = item.task.includes(newTaskData.task)
-  });
-  duplicate === true && alert('Task already added')
-  if(!duplicate) {
-    setTask([newTaskData, ...task])
-  }
-}
 
+    if(newTaskData.task === '' || null){
+      alert('Please add Task');
+    }
+    newTaskData.task.trim().length > 0 && task.forEach(item => {
+      duplicate = item.task.includes(newTaskData.task)
+    });
+    if(!duplicate && newTaskData.task.trim().length != 0) {
+    duplicate === true && alert('Task already added')
+    setTask([newTaskData, ...task])
+    }
+  }
   return (
     <><button className='btn' onClick={()=> addTask()}>{type}</button></>
   )
 }
+
+
 
 export default Button
