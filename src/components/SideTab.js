@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useContext} from 'react';
 import { userContext } from '../context/Context';
 import { IoEarthSharp} from "react-icons/io5";
 import { FaRegCheckCircle } from "react-icons/fa";

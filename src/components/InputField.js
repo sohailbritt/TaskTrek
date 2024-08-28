@@ -2,7 +2,6 @@
 import './InputField.css'
 const InputField = ({getInputData}) => {
 
-    let defaultData;
     const updateInputData = (e) => {
       getInputData(e.target.value);
       e.target.value = '';
