@@ -4,7 +4,6 @@ import { IoCloseSharp } from "react-icons/io5";
 import './Modal.css'
 const Modal = (props) => {
   const {item} = props;
-  console.log(item);
   const {task, setTask} = useContext(taskTrekContext);
   const updateInput = useRef();
   const handleclose = () => {
