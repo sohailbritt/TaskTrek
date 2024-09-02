@@ -1,5 +1,6 @@
 import React,{useContext, useRef} from 'react'
 import {taskTrekContext} from '../context/Context';
+import { updatingTask } from '../api/api';
 import { IoCloseSharp } from "react-icons/io5";
 import './Modal.css'
 const Modal = (props) => {
@@ -19,10 +20,18 @@ const Modal = (props) => {
   const oldTask = task.filter((task)=>{
     return task.id !== item.id
   })
-  setTask([newTaskData, ...oldTask]);
-  console.log(newTaskData);
+  const newTask = {
+    task: newTaskData.task,
+    isCompleted: newTaskData.isCompleted
+  }
+  updatingTask(item.id, newTask).then((res)=>{
+    console.log(res);
+    setTask([newTaskData, ...oldTask]);
+  })
   handleclose();
   }
+
+
     return (
         <div className='popUp'>
           <IoCloseSharp className="close" onClick={handleclose} />

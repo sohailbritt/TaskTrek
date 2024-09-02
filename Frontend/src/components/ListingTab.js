@@ -7,6 +7,7 @@ import InputField from './InputField';
 import Modal from './Modal';
 import Button from './Button';
 import { taskTrekContext, userContext } from '../context/Context';
+import {deleteTask} from '../api/api';
 import './ListingTab.css';
 
 const ListingTab = () => {
@@ -32,7 +33,7 @@ const ListingTab = () => {
   // update or delete popup
   const handlePopup = (item) => {
     setShowModal(true);
-    setCurrenTask(item);
+    setCurrenTask(item)
   }
 
   const handleSearch = () => {
@@ -41,9 +42,12 @@ const ListingTab = () => {
     setFilterTask(updatedTasks);
   }
 
-  const handleDelete = (item) => {
-    const nonDelete = task.filter(t => t.task !== item);
-    setTask(nonDelete);
+  const handleDelete = ({id}) => {
+    deleteTask(id).then((res)=>{
+      console.log('delete item', task);
+      const nonDelete = task.filter(t => t.id !== id);
+      setTask(nonDelete);
+    })
   }
 
   const switchTab = (tabs) => {
@@ -82,7 +86,7 @@ const ListingTab = () => {
                 <span className='status'>{item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}</span>
               </li>
               <span className='status delete'>
-                 <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item.task)} />
+                 <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item)} />
                 </span>
               </>
             ))}
@@ -135,14 +139,16 @@ const ListingTab = () => {
           <ul className='tasklist completed-task'>
             {task.filter(item => item.isCompleted).map((item, index) => (
               <>
-              <li key={index} className='items'>
+              <li onClick={() => handlePopup(item)}
+                key={index} className='items'>
                 {item.task} <span className='status'>{item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}</span>
               </li>
               <span className='status delete'>
-                  {item.isCompleted && <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item.task)} />}
+                  <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item.task)} />
                 </span>
               </>
             ))}
+            {showModal && <Modal setShowModal={setShowModal} item={currentTask} />}
           </ul>
         </section>
       )}

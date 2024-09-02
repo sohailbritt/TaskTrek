@@ -4,7 +4,6 @@ const InputField = ({getInputData}) => {
 
     const updateInputData = (e) => {
       getInputData(e.target.value);
-      e.target.value = '';
     }
   return (
     <>

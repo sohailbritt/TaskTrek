@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { taskTrekContext } from '../context/Context'
+import {createTask} from '../api/api';
 import './Button.css'
 
 
@@ -19,7 +20,10 @@ const addTask = () => {
     if(newTaskData.task === '' || null){
       alert('Please add Task');
     }
-    setTask([newTaskData, ...task])
+    createTask(newTaskData).then((resolve)=>{
+       console.log(resolve, 'task done');
+       setTask([newTaskData, ...task])
+    })
   }
   return (
     <><button className='btn' onClick={()=> addTask()}>{type}</button></>
