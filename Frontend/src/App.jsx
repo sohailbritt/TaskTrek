@@ -8,6 +8,7 @@ import './App.css';
 function App() {
   return (
     <ContextProvider>
+      hi
       <div>
         <header>
           <span>Tasktrek</span>
