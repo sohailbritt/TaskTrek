@@ -18,9 +18,6 @@ const router = express.Router();
 // get all task
 router.get('/tasks', taskController.getAllTask);
 
-//get single task
-router.get('/task/:id', taskController.getSingleTask);
-
 // update single task
 router.put('/task/:id', taskController.updateTask);
 
