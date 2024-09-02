@@ -4,6 +4,5 @@ import { createContext } from 'react';
 const taskTrekContext = createContext(null);
 const userContext = createContext(null);
 
-console.log(taskTrekContext); // Now it's safe
 export { taskTrekContext, userContext };
 

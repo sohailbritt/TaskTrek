@@ -3,6 +3,7 @@ import { LuCheckCircle } from "react-icons/lu";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
+import no_task from '../assets/no_task.png';
 import InputField from './InputField';
 import Modal from './Modal';
 import Button from './Button';
@@ -79,21 +80,25 @@ const ListingTab = () => {
             </div>
           </div>
           <ul className='tasklist'>
-            {task.slice(0, 4).map((item, index) => (
-              <>
-              <li key={index}>
-                {item.task}
-                <span className='status'>{item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}</span>
-              </li>
-              <span className='status delete'>
-                 <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item)} />
+            {task.length === 0 ? <><img className='no_task_img' src={no_task} /> There is no task to complete </> : (task.slice(0, 4).map((item) => (
+              <React.Fragment key={item.id}>
+                <li>
+                  {item.task}
+                  <span className='status'>
+                    {item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}
+                  </span>
+                </li>
+                <span className='status delete'>
+                  <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item)} />
                 </span>
-              </>
-            ))}
-            <span
-            className='more'
-            onClick={()=>{switchTab('tasklist')}}
-            >more...<FaLongArrowAltRight className='arrow'/></span>
+              </React.Fragment>
+            )))}
+            {task.length > 4 && (<span
+              className='more'
+              onClick={() => { switchTab('tasklist') }}
+            >
+              more...<FaLongArrowAltRight className='arrow' />
+            </span>)}
           </ul>
         </section>
       )}
@@ -117,15 +122,15 @@ const ListingTab = () => {
             </div>
           </div>
           <ul className='tasklist'>
-            {filterTask.map((item, index) => (
-              <>
-              <li key={index} className='items'  onClick={() => handlePopup(item)}>
-                {item.task} <span className='status'>{item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}</span>
-              </li>
-              <span className='status delete'>
-                  <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item.task)} />
+            {filterTask.map((item) => (
+              <React.Fragment key={item.id}>
+                <li className='items' onClick={() => handlePopup(item)}>
+                  {item.task} <span className='status'>{item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}</span>
+                </li>
+                <span className='status delete'>
+                  <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item.id)} />
                 </span>
-              </>
+              </React.Fragment>
             ))}
             {showModal && <Modal setShowModal={setShowModal} item={currentTask} />}
           </ul>
@@ -137,16 +142,15 @@ const ListingTab = () => {
         <section>
           <h2 className='wrapper listing-title'>Completed Tasklist</h2>
           <ul className='tasklist completed-task'>
-            {task.filter(item => item.isCompleted).map((item, index) => (
-              <>
-              <li onClick={() => handlePopup(item)}
-                key={index} className='items'>
-                {item.task} <span className='status'>{item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}</span>
-              </li>
-              <span className='status delete'>
-                  <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item.task)} />
+            {task.filter(item => item.isCompleted).map((item) => (
+              <React.Fragment key={item.id}>
+                <li onClick={() => handlePopup(item)} className='items'>
+                  {item.task} <span className='status'>{item.isCompleted && <LuCheckCircle color='green' fontSize='18px' />}</span>
+                </li>
+                <span className='status delete'>
+                  <RiDeleteBin5Line color='red' fontSize='20px' onClick={() => handleDelete(item.id)} />
                 </span>
-              </>
+              </React.Fragment>
             ))}
             {showModal && <Modal setShowModal={setShowModal} item={currentTask} />}
           </ul>

@@ -147,6 +147,12 @@ ul li {
     font-size: 18px;
     color: blue;
 }
+.no_task_img{
+    width: 160px;
+    position: absolute;
+    top:300px
+
+}
 .more {
     color: blue;
 }
