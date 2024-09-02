@@ -40,34 +40,11 @@ const getAllTask = async(req, res) => {
     }
 }
 
-const getSingleTask = async (req, res) => {
-    try {
-        const taskId = parseInt(req.params.id, 10);
-
-        // Find the document containing the task with the specific `id`
-        const taskDocument = await Task.findOne({ 'tasks.id': taskId });
-
-        if (!taskDocument) {
-            return res.status(404).json({ error: 'Task not found' });
-        }
-
-        // Find the specific task within the `tasks` array
-        const task = taskDocument.tasks.find(task => task.id === taskId);
-
-        if (!task) {
-            return res.status(404).json({ error: 'Task not found' });
-        }
-
-        res.status(200).json(task);
-    } catch (error) {
-        res.status(500).json({ error: 'Server error' });
-    }
-};
 
 const updateTask = async (req, res) => {
     try {
         const { task, isCompleted } = req.body;
-        const taskId = parseInt(req.params.id, 10);
+        const taskId = req.params.id ;
 
         // Find the document containing the task with the specific `id` and update it
         const updatedTaskDocument = await Task.findOneAndUpdate(
@@ -97,7 +74,7 @@ const updateTask = async (req, res) => {
 
 const deleteTask = async (req, res) => {
     try {
-        const taskId = parseInt(req.params.id, 10);
+        const taskId = req.params.id ;
 
         // Find the document containing the task and remove the task with the specific `id`
         const updatedTaskDocument = await Task.findOneAndUpdate(
@@ -122,7 +99,6 @@ const deleteTask = async (req, res) => {
 module.exports = {
     createTask,
     getAllTask,
-    getSingleTask,
     updateTask,
     deleteTask
 }
