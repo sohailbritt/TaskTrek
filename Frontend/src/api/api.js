@@ -1,6 +1,6 @@
+const apiUrl = import.meta.env.VITE_APP_URL;
 
-
-const createTask = async(data) => {
+export const createTask = async(data) => {
     const options = {
         method: 'post',
         headers: {
@@ -8,26 +8,26 @@ const createTask = async(data) => {
         },
         body: JSON.stringify(data)
     }
-    const postData = await fetch('http://localhost:4000/api/task', options);
+    const postData = await fetch(apiUrl + '/api/task', options);
     const result  = await postData.json();
     return result;
 }
 
-const deleteTask = async(id) => {
-    const allTask = await fetch('http://localhost:4000/api/task/' + id, {
+export const deleteTask = async(id) => {
+    const allTask = await fetch( apiUrl + '/api/task/' + id, {
         method: 'DELETE',
       });
     const result = await allTask.json();
     return result;
 }
 
-const getAllTask = async() => {
-    const allTask = await fetch('http://localhost:4000/api/tasks');
+export const getAllTask = async() => {
+    const allTask = await fetch(apiUrl + '/api/tasks');
     const result = await allTask.json();
     return result;
 }
 
-const updatingTask = async(id, data) => {
+export const updatingTask = async(id, data) => {
     const options = {
         method: 'PUT',
         headers: {
@@ -35,11 +35,7 @@ const updatingTask = async(id, data) => {
         },
         body: JSON.stringify(data)
     }
-  const updatedTask = await fetch('http://localhost:4000/api/task/' + id , options);
+  const updatedTask = await fetch(apiUrl + '/api/task/' + id , options);
   const result = await updatedTask.json();
   return result;
-}
-
-module.exports= {
-    getAllTask, createTask, deleteTask, updatingTask
 }

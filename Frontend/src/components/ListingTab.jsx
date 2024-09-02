@@ -66,9 +66,9 @@ const ListingTab = () => {
           <div className='wrapper'>
             <div key='dashboard' className='form-wrapper dashboard'>
               <InputField getInputData={getInputData} />
-              <div class="switch-toggle">
-                    <input class="switch-toggle-checkbox" type="checkbox" id="pricing-plan-switch" ref={getInputChecked}/>
-                    <label class="switch-toggle-label" for="pricing-plan-switch">
+              <div className="switch-toggle">
+                    <input className="switch-toggle-checkbox" type="checkbox" id="pricing-plan-switch" ref={getInputChecked}/>
+                    <label className="switch-toggle-label" htmlFor="plan-switch">
                       <span>Not Yet</span>
                       <span>Done</span>
                     </label>
