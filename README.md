@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+# 🚀 TaskTrek
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TaskTrek is your ultimate task management tool with simple elegant UI and minimalist design! 📝 It helps you organize, track, and manage your tasks with ease. Add, update, delete, and filter your tasks all in one place!
 
-## Available Scripts
+## 🌐 GitHub Repository
 
-In the project directory, you can run:
+[TaskTrek GitHub Repository](https://github.com/sohailbritt/TaskTrek)
 
-### `npm start`
+## 📚 Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   [✨ Features](#-features)
+-   [🛠 Technologies Used](#-technologies-used)
+-   [⚙️ Installation](#%EF%B8%8F-installation)
+-   [🎯 Usage](#-usage)
+-   [🔗 API Endpoints](#-api-endpoints)
+-   [📦 Components](#-components)
+-   [🌐 Context Providers](#-context-providers)
+-   [📜 License](#-license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+-   🗂 **Task Management**: Effortlessly add, edit, delete, and view tasks.
+-   🔍 **Task Filtering**: Easily filter tasks by their completion status (Completed, Not Yet Completed).
+-   🔎 **Search Functionality**: Quickly search tasks by name.
+-   ⚡ **Dynamic UI Updates**: Real-time task updates using React hooks.
+-   🌍 **Global State Management**: Manage global state across components with Context API.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Technologies Used
 
-### `npm run build`
+-   **Frontend**: React ⚛️, CSS 🎨
+-   **Backend**: Node.js 🟢, Express.js 🚀
+-   **Database**: MongoDB 🍃
+-   **Deployment**: Vercel 🌍 (for backend), Vite ⚡ (for frontend)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Node.js 🟢
+-   npm or yarn 📦
+-   MongoDB 🍃
 
-### `npm run eject`
+### Clone the Repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Copy code
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`git clone https://github.com/sohailbritt/TaskTrek.git
+cd TaskTrek`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Backend Setup
 
-## Learn More
+1.  Navigate to the `backend` directory.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    bash
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Copy code
 
-### Code Splitting
+    `cd backend`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2.  Install the required dependencies.
 
-### Analyzing the Bundle Size
+    bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Copy code
 
-### Making a Progressive Web App
+    `npm install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3.  Set up environment variables in a `.env` file.
 
-### Advanced Configuration
+    env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    Copy code
 
-### Deployment
+    `PORT=4000
+    MONGODB=your_mongodb_uri`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4.  Run the backend server.
 
-### `npm run build` fails to minify
+    bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Copy code
+
+    `npm start`
+
+
+### Frontend Setup
+
+1.  Navigate to the `frontend` directory.
+
+    bash
+
+    Copy code
+
+    `cd frontend`
+
+2.  Install the required dependencies.
+
+    bash
+
+    Copy code
+
+    `npm install`
+
+3.  Run the frontend server.
+
+    bash
+
+    Copy code
+
+    `npm start`
+
+
+### Accessing the Application
+
+-   The frontend will run on `http://localhost:5173` 🖥️.
+-   The backend will run on `http://localhost:4000` 🌐.
+
+## 🎯 Usage
+
+### ➕ Adding a Task
+
+1.  Navigate to the **Dashboard** tab.
+2.  Enter the task details in the input field.
+3.  Click on the **Add** button to add the task to the list.
+
+### 🗑️ Deleting a Task
+
+1.  Go to the **TaskList** or **Completed TaskList** section.
+2.  Click on the delete icon 🗑️ next to the task you want to delete.
+
+### 🔍 Searching for a Task
+
+1.  Use the search bar in the **TaskList** section.
+2.  Type in the name of the task you want to find.
+
+### 🔄 Switching Between Tabs
+
+1.  Click on the **Dashboard**, **TaskList**, or **Completed TaskList** tabs to switch between different task views.
+
+## 🔗 API Endpoints
+
+### GET `/api/tasks`
+
+-   **Description**: Fetch all tasks.
+-   **Response**: JSON array of tasks.
+
+### POST `/api/task`
+
+-   **Description**: Add a new task.
+-   **Body**: `{ task: String, isCompleted: Boolean }`
+-   **Response**: The newly created task.
+
+### PUT `/api/task/:id`
+
+-   **Description**: Update a task by ID.
+-   **Body**: `{ task: String, isCompleted: Boolean }`
+-   **Response**: The updated task.
+
+### DELETE `/api/task/:id`
+
+-   **Description**: Delete a task by ID.
+-   **Response**: Success message or error.
+
+## 📦 Components
+
+### `ListingTab.jsx`
+
+-   Manages the display of tasks, including searching, filtering, and switching between different views (Dashboard, TaskList, Completed TaskList).
+
+### `InputField.jsx`
+
+-   Handles the input of new tasks.
+
+### `Modal.jsx`
+
+-   Displays a modal for updating or deleting a task.
+
+### `Button.jsx`
+
+-   Renders buttons with different functionalities like adding tasks.
+
+## 🌐 Context Providers
+
+### `taskTrekContext`
+
+-   Provides task-related state and actions across the application.
+
+### `userContext`
+
+-   Manages user-related state such as the current tab view.
+
+## 📜 License
+
+TaskTrek is licensed under the MIT License. See the [LICENSE](https://github.com/sohailbritt/TaskTrek/blob/main/LICENSE) file for more details.
